@@ -19,17 +19,29 @@ We tried different packages while building our apps, eventually we find out eith
 Depends on how you import...
 
 `is.string(val)` or `isString(val)`
+
 `is.object(val)` or `isObject(val)`
+
 `is.date(val)` or `isDate(val)`
+
 `is.fn(val)` or `isFunction(val)`
+
 `is.array(val)` or `isArray(val)`
+
 `is.float(val)` or `isFloat(val)`
+
 `is.integer(val)` or `isInteger(val)`
+
 `is.number(val)` or `isNumber(val)`
+
 `is.regexp(val)` or `isRegExp(val)`
+
 `is.boolean(val)` or `isBoolean(val)`
+
 `is.empty(val)` or `isEmpty(val)`
+
 `is.ISO8601(val)` or `isISO8601(val)`
+
 `is.color(val)` or `isColor(val)`
 
 method names explains themselves...
