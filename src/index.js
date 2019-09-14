@@ -7,8 +7,12 @@ export const isString = i => {
   return typeof i === "string" || i instanceof String;
 };
 
+export const isArray = i => {
+  return Array.isArray(i);
+};
+
 export const isObject = i => {
-  if (i === null) {
+  if (i === null || isArray(i)) {
     return false;
   }
   return typeof i === "function" || typeof i === "object";
@@ -40,10 +44,6 @@ export const isDate = value => {
 
 export const isFunction = i => {
   return i && {}.toString.call(i) === "[object Function]";
-};
-
-export const isArray = i => {
-  return Array.isArray(i);
 };
 
 export const isFloat = n => {
@@ -78,6 +78,10 @@ export const isISO8601 = input => {
   return re.test(input);
 };
 
+export const isNull = i => {
+  return i == null || i == undefined;
+};
+
 export const isColor = input => {
   if (isString(input)) {
     let re = /#(?:[a-f\d]{3}){1,2}\b|rgb\((?:(?:\s*0*(?:25[0-5]|2[0-4]\d|1?\d?\d)\s*,){2}\s*0*(?:25[0-5]|2[0-4]\d|1?\d?\d)|\s*0*(?:100(?:\.0+)?|\d?\d(?:\.\d+)?)%(?:\s*,\s*0*(?:100(?:\.0+)?|\d?\d(?:\.\d+)?)%){2})\s*\)|hsl\(\s*0*(?:360|3[0-5]\d|[12]?\d?\d)\s*(?:,\s*0*(?:100(?:\.0+)?|\d?\d(?:\.\d+)?)%\s*){2}\)|(?:rgba\((?:(?:\s*0*(?:25[0-5]|2[0-4]\d|1?\d?\d)\s*,){3}|(?:\s*0*(?:100(?:\.0+)?|\d?\d(?:\.\d+)?)%\s*,){3})|hsla\(\s*0*(?:360|3[0-5]\d|[12]?\d?\d)\s*(?:,\s*0*(?:100(?:\.0+)?|\d?\d(?:\.\d+)?)%\s*){2},)\s*0*(?:1(?:\.0+)?|0(?:\.\d+)?)\s*\)/gi;
@@ -109,5 +113,6 @@ export default {
   boolean: isBoolean,
   empty: isEmpty,
   ISO8601: isISO8601,
-  color: isColor
+  color: isColor,
+  null: isNull
 };

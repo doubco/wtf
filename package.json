@@ -1,6 +1,6 @@
 {
   "name": "wtf-is-this",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Type checker for JS",
   "main": "lib/index.js",
   "commonjs": "lib/index.cjs.js",
@@ -23,7 +23,10 @@
     "string",
     "number",
     "date",
-    "validation"
+    "validation",
+    "check",
+    "regex",
+    "undefined"
   ],
   "devDependencies": {
     "@babel/core": "^7.1.2",

@@ -44,6 +44,8 @@ Depends on how you import...
 
 `is.color(val)` or `isColor(val)`
 
+`is.null(val)` or `isNull(val)`
+
 method names explains themselves...
 
 ---
