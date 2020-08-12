@@ -1,6 +1,6 @@
 {
-  "name": "wtf-is-this",
-  "version": "0.0.5",
+  "name": "@doubco/wtf",
+  "version": "0.0.6",
   "description": "Type checker for JS",
   "main": "lib/index.js",
   "commonjs": "lib/index.cjs.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/doubco/wtf-is-this"
+    "url": "https://github.com/doubco/wtf"
   },
   "keywords": [
     "is",
