@@ -1,6 +1,6 @@
 {
   "name": "@doubco/wtf",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Type checker for JS",
   "main": "lib/index.js",
   "commonjs": "lib/index.cjs.js",

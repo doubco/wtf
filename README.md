@@ -1,6 +1,6 @@
 # WTF is this?
 
-`wtf-is-this` is a basic JS validation and helper library
+`@doubco/wtf` is a basic JS validation and helper library
 
 ## Why?
 
@@ -8,11 +8,11 @@ We tried different packages while building our apps, eventually we find out eith
 
 ## Installation
 
-`yarn add wtf-is-this` or `npm install wtf-is-this --save`
+`yarn add @doubco/wtf` or `npm install @doubco/wtf --save`
 
 ## Usage
 
-`import is from "wtf-is-this"` or `import { isString } from "wtf-is-this"`
+`import is from "@doubco/wtf"` or `import { isString } from "@doubco/wtf"`
 
 ## Available Helpers
 
@@ -57,6 +57,5 @@ Pull requests are welcome and please submit bugs 🐛.
 ## Contact
 
 - Follow [@doubco](https://twitter.com/doubco) on Twitter
-- Follow [@doubco](http://facebook.com/doubco) on Facebook
 - Follow [@doubco](http://instagram.com/doubco) on Instagram
 - Email <mailto:hi@doub.co>
