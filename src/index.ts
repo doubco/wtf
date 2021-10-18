@@ -3,24 +3,24 @@ globals
 Symbol
 */
 
-export const isString = i => {
+export const isString = (i: any) => {
   return typeof i === "string" || i instanceof String;
 };
 
-export const isArray = i => {
+export const isArray = (i: any) => {
   return Array.isArray(i);
 };
 
-export const isObject = i => {
+export const isObject = (i: any) => {
   if (i === null || isArray(i)) {
     return false;
   }
   return typeof i === "function" || typeof i === "object";
 };
 
-export const isDate = value => {
+export const isDate = (value: any) => {
   let getDay = Date.prototype.getDay;
-  let tryDateObject = function tryDateGetDayCall(value) {
+  let tryDateObject = function tryDateGetDayCall(value: any) {
     try {
       getDay.call(value);
       return true;
@@ -42,47 +42,47 @@ export const isDate = value => {
     : toStr.call(value) === dateClass;
 };
 
-export const isFunction = i => {
+export const isFunction = (i: any) => {
   return i && {}.toString.call(i) === "[object Function]";
 };
 
-export const isFloat = n => {
+export const isFloat = (n: any) => {
   return Number(n) === n && n % 1 !== 0;
 };
 
-export const isInteger = n => {
+export const isInteger = (n: any) => {
   return Number(n) === n && n % 1 === 0;
 };
 
-export const isNumber = n => {
+export const isNumber = (n: any) => {
   return isFloat(n) || isInteger(n);
 };
 
-export const isEmpty = value => {
+export const isEmpty = (value: any) => {
   if (value === null) return true;
   if (value === undefined) return true;
   if (isObject(value) && !Object.keys(value).length) return true;
   if (!value.length) return true;
 };
 
-export const isRegExp = input => {
+export const isRegExp = (input: any) => {
   return Object.prototype.toString.call(input) === "[object RegExp]";
 };
 
-export const isBoolean = input => {
+export const isBoolean = (input: any) => {
   return input === true || input === false;
 };
 
-export const isISO8601 = input => {
+export const isISO8601 = (input: string) => {
   let re = /^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(.[0-9]+)?(Z)?$/;
   return re.test(input);
 };
 
-export const isNull = i => {
+export const isNull = (i: any) => {
   return i == null || i == undefined;
 };
 
-export const isColor = input => {
+export const isColor = (input: string) => {
   if (isString(input)) {
     let re = /#(?:[a-f\d]{3}){1,2}\b|rgb\((?:(?:\s*0*(?:25[0-5]|2[0-4]\d|1?\d?\d)\s*,){2}\s*0*(?:25[0-5]|2[0-4]\d|1?\d?\d)|\s*0*(?:100(?:\.0+)?|\d?\d(?:\.\d+)?)%(?:\s*,\s*0*(?:100(?:\.0+)?|\d?\d(?:\.\d+)?)%){2})\s*\)|hsl\(\s*0*(?:360|3[0-5]\d|[12]?\d?\d)\s*(?:,\s*0*(?:100(?:\.0+)?|\d?\d(?:\.\d+)?)%\s*){2}\)|(?:rgba\((?:(?:\s*0*(?:25[0-5]|2[0-4]\d|1?\d?\d)\s*,){3}|(?:\s*0*(?:100(?:\.0+)?|\d?\d(?:\.\d+)?)%\s*,){3})|hsla\(\s*0*(?:360|3[0-5]\d|[12]?\d?\d)\s*(?:,\s*0*(?:100(?:\.0+)?|\d?\d(?:\.\d+)?)%\s*){2},)\s*0*(?:1(?:\.0+)?|0(?:\.\d+)?)\s*\)/gi;
 
@@ -100,7 +100,7 @@ export const isColor = input => {
   return false;
 };
 
-export default {
+const WTF = {
   string: isString,
   object: isObject,
   date: isDate,
@@ -114,5 +114,7 @@ export default {
   empty: isEmpty,
   ISO8601: isISO8601,
   color: isColor,
-  null: isNull
+  null: isNull,
 };
+
+export default WTF;
