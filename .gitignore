@@ -5,3 +5,4 @@
 *.sublime-project
 
 /.scenes/node_modules/
+.DS_Store
